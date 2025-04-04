@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Day</title>
+    <style>
+        body{
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        #black-mode,#white-mode{
+            width: 100px;
+            height: 100px;
+            align-self: end;
+        }
+        #white-mode{
+            display: none;
+        }
+        header{
+            display: flex;
+            flex-direction: column;
+        }
+        h1{
+            margin: 0;
+        }
+        .buttons{
+            margin-top: 70px;
+            align-self: center;
+        }
+        .buttons button{
+            width: 150px;
+            height: 50px;
+            font-size: 1.5rem;
+            border: 0;
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+        }
+        .window{
+            width: 420px;
+            height: 225px;
+            background-color: black;
+            position: absolute;
+            align-self: center;
+            top: 30%;
+            border-radius: 5px;
+            /* to flex by js */
+            display: none;
+            flex-direction: column;
+
+        }
+        h3{
+            align-self: center;
+            color: white;
+            margin: 0;
+            margin-top: 5px;
+            font-size: 2rem;
+        }.line{
+            background-color: white;
+            align-self: center;
+            width: 300px;
+            height: 45px;
+
+        }
+        .line input{
+            width: 300px;
+            height: 40px;
+            border: 0;
+           background-color: black;
+           color: white;
+           font-size: 1.5rem;
+        }
+        input:focus {
+        outline: none;
+}
+        .save{
+           
+            align-self: end;
+            margin-right: 10px;
+        }
+        .cancel{
+            margin-left: 10px;
+        }
+        .cancel , .save{
+            width: 70px;
+            height: 30px;
+            position: absolute;
+            top: 75%;
+            
+        }
+        .Tasks{
+            width: 100%;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        p,span{
+            margin: 5px;
+            font-size: 2rem;
+        }
+        .task-style{
+            width: 440px;
+            height: 95px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+  
+        @media screen and (max-width:768px) {
+            .task-style{
+                width: 320px;
+            }
+            .window{
+                width: 350px;
+            }
+        }
+        .black_border{
+            border: 5px solid black;
+        }
+
+        .white_border{
+            border: 5px solid white;
+        }
+        .white_color{
+            color: white;
+        }
+        .black_color{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- part 1 -->
+    <header>
+        <h1>My activity</h1>
+        <img src="./icons/black mode icon.png" alt="black mode icon." id="black-mode">
+        <img src="./icons/white mode icon.png" alt="white mode icon" id="white-mode">
+    </header>
+
+    <!-- part 2 -->
+    <div class="buttons">
+        <button id="add-Task" class="white_bg">Add</button>
+        <button class="white_bg">Your Days</button>
+    </div>
+
+
+    <!-- part 3 -->
+
+    <div class="window">
+        <h3>Task</h3>
+        <div class="line">
+            <input type="text" id="Task_Name_input">
+        </div>
+        <button class="cancel">cancel</button>
+        <button class="save">save</button>
+    </div>
+
+
+    <!-- part 4 -->
+
+    <div class="Tasks">
+       
+
+        
+    </div>
+</body>
+<script src="./index.js"></script>
+</html>
