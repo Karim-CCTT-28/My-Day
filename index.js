@@ -58,12 +58,12 @@ function new_Task(){
     //black and light mode ,light = 1 , black = else
         if(flag === 1 ){
 
-            div.setAttribute("class","task-style black_border");
-            output_Task_Name.setAttribute("class","black_color");
+            div.setAttribute("class","task-style white_block");
+            // output_Task_Name.setAttribute("class","black_color");
             timer.setAttribute("class","black_color");
         }
         else{
-            div.setAttribute("class","task-style white_border");
+            div.setAttribute("class","task-style black_block");
             output_Task_Name.setAttribute("class","white_color");
             timer.setAttribute("class","white_color");
         }
@@ -75,8 +75,14 @@ function new_Task(){
 function black_mode(){
     let black = document.querySelector("#black-mode");
     black.addEventListener("click",function(){
+
         flag = 2;
-        document.querySelector("body").style.backgroundColor = "black";
+        document.querySelector(".window h3").style.color = "black";
+        document.querySelector(".window").style.backgroundColor = "white";
+        document.querySelector(".line").style.backgroundColor = "black";
+        document.querySelector("#Task_Name_input").style.backgroundColor = "white";
+        document.querySelector("#Task_Name_input").style.color = "black";
+        document.querySelector("body").style.backgroundColor = "#1E201E";
         document.querySelector("h1").style.color = "white";
 
         document.querySelectorAll(".buttons button")[0].style.backgroundColor = "white";
@@ -91,8 +97,8 @@ function black_mode(){
     for(let i=0 ;i<Tasks_style.length;i++)    
     {
 
-        document.querySelectorAll(".task-style")[i].classList.remove("black_border");
-        document.querySelectorAll(".task-style")[i].classList.add("white_border");
+        document.querySelectorAll(".task-style")[i].classList.remove("white_block");
+        document.querySelectorAll(".task-style")[i].classList.add("black_block");
 
         document.querySelectorAll(".task-style p")[i].classList.remove("black_color");
         document.querySelectorAll(".task-style p")[i].classList.add("white_color");
@@ -115,7 +121,12 @@ function white_mode(){
     let white = document.querySelector("#white-mode");
     white.addEventListener("click",function(){
         flag = 1;
-        document.querySelector("body").style.backgroundColor = "white";
+        document.querySelector(".window h3").style.color = "white";
+        document.querySelector(".window").style.backgroundColor = "black";
+        document.querySelector("body").style.backgroundColor = "#F7F7F7";
+        document.querySelector(".line").style.backgroundColor = "white";
+        document.querySelector("#Task_Name_input").style.backgroundColor = "black";
+        document.querySelector("#Task_Name_input").style.color = "white";
         document.querySelector("h1").style.color = "black";
 
         document.querySelectorAll(".buttons button")[0].style.backgroundColor = "black";
@@ -128,8 +139,8 @@ function white_mode(){
         let Tasks_style = document.querySelectorAll(".task-style");
         for(let i=0 ;i<Tasks_style.length;i++)    
         {
-            document.querySelectorAll(".task-style")[i].classList.remove("white_border");
-            document.querySelectorAll(".task-style")[i].classList.add("black_border");
+            document.querySelectorAll(".task-style")[i].classList.remove("black_block");
+            document.querySelectorAll(".task-style")[i].classList.add("white_block");
 
 
             document.querySelectorAll(".task-style p")[i].classList.remove("white_color");
